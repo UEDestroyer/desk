@@ -1,0 +1,50 @@
+﻿@media (max-width:800px){
+    .container{
+        width: 100%;
+        padding: 40%;
+    }
+    main{
+        padding: 0;
+    }
+
+    .grid{
+        grid-template-columns: repeat(4,1fr);
+        gap:20px;
+    }
+    article.hero-text,aside.hero-text,.hero-image,.hero-actions{
+        grid-column: 1/5;
+    }
+    .hero-text h1{
+        font-size: 10vw;
+    }
+    .cta-buttons{
+        flex-direction: column;
+    }
+    .hero-actions{
+        display: grid;
+        gap:inherit;
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-actions>.control{
+        grid-column: span 2;
+        grid-row: 1;
+        display: inherit;
+        grid-template-columns: inherit;
+    }
+    .hero-actions>.control>.arrow-button{
+        width: 100%;
+        border: 32px;
+    }
+    .hero-actions>.button{
+        grid-column: span 2;
+        grid-row: 2;
+    }
+}
+@media (min-width:800px){
+    .button{
+        transform: scale(1);
+    }
+    .button:active,.arrow-button:active{
+        transform: scale(1.05);
+    }
+}
