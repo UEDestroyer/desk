@@ -1,0 +1,71 @@
+:root {
+    --main-color: lightblue;
+}
+
+.cont {
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+label.error{
+    color:red;
+}
+label.success{
+    color: green;
+}
+
+input:active,
+input:focus{
+    border:1px solid blue;
+    box-shadow: 0 0 15px blue;
+}
+
+input.error{
+    border:1px solid red;
+    box-shadow: 0 0 15px red;
+}
+input.success{
+    border:1px solid green;
+    box-shadow: 0 0 15px green;
+
+}
+form{
+    width:calc(100% - 40px) ;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1px auto;
+}
+:root:has(form:hover) {
+    --main-color:lightgreen;
+}
+
+
+ul li:has(button) {
+    background-color: greenyellow;
+}
+
+ul{
+    margin: auto auto;
+    margin-top: 12px;
+}
+
+ul li:has(img){
+    border: 10px solid black;
+}
+div.hide{
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked+ div{
+    visibility:visible;
+}
