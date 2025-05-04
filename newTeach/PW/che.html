@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Кошмарный дизайн</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff00ff;
+            color: #00ff00;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        .container {
+            text-align: center;
+            padding-top: 20%;
+        }
+        .bad-button {
+            background-color: #ffff00;
+            border: 5px dotted #ff0000;
+            color: #0000ff;
+            font-size: 30px;
+            padding: 20px;
+            width: 300px;
+        }
+        .bad-button:hover {
+            background-color: #00ffff;
+            color: #ff0000;
+        }
+        .screamer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            text-align: center;
+            z-index: 999;
+        }
+        .screamer img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ОНО НЕ НАСТОЯЩЕЕ</h1>
+        <button class="bad-button" onclick="showScreamer()">Нажми, если осмелишься</button>
+    </div>
+    
+    <div id="screamer" class="screamer">
+        <img src="https://avatars.mds.yandex.net/i?id=273415c573a295b82966583e4c1c8adf85c47598-12615826-images-thumbs&n=13" alt="Скример">
+        <audio id="screamer-audio" src="screamer.mp3"></audio>
+    </div>
+    
+    <script>
+        function showScreamer() {
+            document.getElementById('screamer-audio').play();
+            document.getElementById('screamer').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('screamer').style.display = 'none';
+                setTimeout(()=>{
+                    window.location.href = "http://127.0.0.1:5500/index.html";
+                },500)
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
